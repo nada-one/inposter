@@ -13,8 +13,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import * as Realm from "realm-web";
+import Image from './bg.jpg'; 
+import Logo from './logo.png';
 
-const REALM_APP_ID = "inposter-mpepe"; // e.g. myapp-abcde
+const REALM_APP_ID = "inposter-mpepe";
 const app = new Realm.App({ id: REALM_APP_ID });
 
 function Copyright(props) {
@@ -22,7 +24,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Inposter Digital Invites
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -59,7 +61,7 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage: `url(${Image})`,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -77,9 +79,7 @@ export default function SignInSide() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
+            <Avatar src="./logo.png" />
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
